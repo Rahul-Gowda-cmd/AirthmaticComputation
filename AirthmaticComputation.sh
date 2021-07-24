@@ -1,4 +1,4 @@
-#!/bin/bash -x 
+#!/bin/bash  
 echo "Welcome to the Arithmatic Computation And Sorting"
 echo "Enter the first Number"
 read a
@@ -34,8 +34,39 @@ Array[((counter++))]=$result2
 Array[((counter++))]=$result3
 Array[((counter++))]=$result4
 echo ${Array[@]}
+
 echo "Original Numbers in array:"
 for (( i = 0; i <= 3; i++ ))
 do
       echo ${Array[$i]}
+done
+for (( i = 0; i <= 3; i++ ))
+do
+	for (( j = $i; j <= 3; j++ ))
+   	do
+      		if [ ${Array[$i]} -lt ${Array[$j]} ] 
+		then
+       			t=${Array[$i]}
+       			Array[$i]=${Array[$j]}
+       			Array[$j]=$t
+      		fi
+   	done
+done
+
+echo -e "\nSorted Numbers in Descending Order:"
+for (( i=0; i <= 3; i++ ))
+do
+  	echo ${Array[$i]}
+done
+for (( i = 0; i <= 3; i++ ))
+do
+   for (( j = $i; j <= 3; j++ ))
+   do
+      if [ ${Array[$i]} -gt ${Array[$j]}  ]
+      then
+       t=${Array[$i]}
+       Array[$i]=${Array[$j]}
+       Array[$j]=$t
+      fi
+   done
 done
