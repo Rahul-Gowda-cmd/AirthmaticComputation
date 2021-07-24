@@ -28,3 +28,14 @@ echo ${test_var[key1]}
 echo ${test_var[key2]}
 echo ${test_var[key3]}
 echo ${test_var[key4]}
+
+Array[((counter++))]=$result1
+Array[((counter++))]=$result2
+Array[((counter++))]=$result3
+Array[((counter++))]=$result4
+echo ${Array[@]}
+echo "Original Numbers in array:"
+for (( i = 0; i <= 3; i++ ))
+do
+      echo ${Array[$i]}
+done
