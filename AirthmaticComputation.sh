@@ -70,3 +70,9 @@ do
       fi
    done
 done
+
+echo -e "\nSorted Numbers in Ascending Order:"
+for (( i=0; i <= 3; i++ )) 
+do
+  echo ${Array[$i]}
+done
